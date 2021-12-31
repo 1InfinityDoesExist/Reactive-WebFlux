@@ -82,7 +82,7 @@ public class PersonHandler {
 
 	public Mono<ServerResponse> getPersonHobbies(ServerRequest request) {
 		Long personId = Long.parseLong(request.pathVariable("id"));
-		log.info("-----personId : {}", personId);
+		log.info("-----personId ka hobby : {}", personId);
 		Map<String, Object> personObject = HOBBY_DATA.get(personId);
 
 		return personObject != null ? ServerResponse.ok().bodyValue(personObject) : NOT_FOUND;
